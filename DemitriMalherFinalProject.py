@@ -1,18 +1,6 @@
-from cProfile import label
-from cgitb import text
-from optparse import Option
-from random import random
-from select import select
 from tkinter import *
 from tkinter import ttk
 import tkinter
-
-
-from tkinter.font import BOLD
-from tkinter.messagebox import showinfo
-from tkinter.tix import LabelEntry
-from turtle import back
-
 
 coffee = Tk()
 coffee.configure(background='#FFFAF0')
@@ -37,8 +25,6 @@ BottomMainFrame.pack(side=BOTTOM)
 #First Frame or f1 Frame
 f1 = Frame (BottomMainFrame, width = 250 , height = 500, relief="raise", bd=12 )
 f1.pack(side=LEFT)
-
-
 
 
 # F1TOP Frame
@@ -128,7 +114,7 @@ Label(f3, text="Special Req.(Ex. Whipped, Nutmeg, etc.)", font=('Times New Roman
 
 def myClick():
     newWindow = Toplevel(coffee)
-    newWindow.title("Welcome!")
+    newWindow.title("Order...")
     newWindow.geometry("500x300")
     
 
