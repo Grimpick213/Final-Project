@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import ttk
 import tkinter
 
+
 coffee = Tk()
 coffee.configure(background='#FFFAF0')
 coffee.geometry("750x500+0+0")
@@ -35,13 +36,12 @@ f1TOP.pack(side=TOP)
 def openNewWindow():
     newWindow = Toplevel(coffee)
     newWindow.title("Welcome!")
-    newWindow.geometry("300x300")
-    
+    newWindow.geometry("350x200")
+   
 
 
     Label(newWindow,
-          text ="       Thank You for Signing in!", font=('Times New Roman', 16, 'bold')).grid()
-         
+          text='Thanks for Signing in!', font=('Arial', 10, 'bold')).grid()        
 
     
 Label(f1TOP, text="Customer", font=('Times New Roman', 14, 'bold', )).grid(row=1, column=1)
@@ -127,6 +127,8 @@ e.pack()
 
 myButton = Button(f3, text="Submit", command=myClick)
 myButton.pack()
+
+
 
 exit_button = Button(f3, text="Exit", command=coffee.destroy)
 exit_button.pack(pady=10)
