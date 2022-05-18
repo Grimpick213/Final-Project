@@ -1,3 +1,4 @@
+from hashlib import new
 from tkinter import *
 from tkinter import ttk
 import tkinter
@@ -37,7 +38,9 @@ def openNewWindow():
     newWindow = Toplevel(coffee)
     newWindow.title("Welcome!")
     newWindow.geometry("350x200")
-   
+    print(nameentry.get())
+    print(PhoneNumberentry.get())
+    print(Addressentry.get())
 
 
     Label(newWindow,
@@ -90,14 +93,16 @@ Label(f2, text="Coffee Choices:", font=('Times New Roman', 14, 'bold', )).pack()
 def select(option):
     print(option)
 
+var=StringVar()
+
 ttk.Button(f2, text='Americano', command=lambda: select('Americano')).pack()
-ttk.Button(f2, text='Arabica',command=lambda: select('Arabica')).pack()
-ttk.Button(f2, text='Espresso', command=lambda: select('Espresso')).pack()
-ttk.Button(f2, text='Cappucino', command=lambda: select('Capuccino')).pack()
-ttk.Button(f2, text='Macchiato',command=lambda: select('Macchiato')).pack()
-ttk.Button(f2, text='Verano', command=lambda: select('Verano')).pack()
-ttk.Button(f2, text='Liberica',command=lambda: select('Liberica')).pack()
-ttk.Button(f2, text='Robusta', command=lambda: select('Robusta')).pack()
+ttk.Button(f2, text='Arabica', command=lambda: select('Arabica')).pack()
+ttk.Button(f2, text='Espresso',  command=lambda: select('Espresso')).pack()
+ttk.Button(f2, text='Cappucino',  command=lambda: select('Capuccino')).pack()
+ttk.Button(f2, text='Macchiato', command=lambda: select('Macchiato')).pack()
+ttk.Button(f2, text='Verano',  command=lambda: select('Verano')).pack()
+ttk.Button(f2, text='Liberica', command=lambda: select('Liberica')).pack()
+ttk.Button(f2, text='Robusta',  command=lambda: select('Robusta')).pack()
 
 label = Label(f2)
 label.pack()
@@ -110,20 +115,26 @@ f3.pack(side=RIGHT)
 Label(f3, text="Special Req.(Ex. Whipped, Nutmeg, etc.)", font=('Times New Roman', 9,'bold' )).pack()
 
 
-
+e = Entry(f3, width = 100)
+e.pack()
 
 def myClick():
     newWindow = Toplevel(coffee)
     newWindow.title("Order...")
     newWindow.geometry("500x300")
+    Label(newWindow,
+          text ="Thank you, Your Order will be Ready in 10 mins.", font=('Times New Roman', 16, 'bold')).pack()
+    Label(newWindow,
+        text=nameentry.get()).pack()
+    Label(newWindow,
+        text=Addressentry.get()).pack()
+    Label(newWindow,
+        text=PhoneNumberentry.get()).pack()
+    Label(newWindow,
+        text=e.get()).pack()
+    print(e.get())
     
 
-    Label(newWindow,
-          text ="Thank you, Your Order will be Ready in 10 mins.", font=('Times New Roman', 16, 'bold')).grid()
-
-
-e = Entry(f3, width = 100)
-e.pack()
 
 myButton = Button(f3, text="Submit", command=myClick)
 myButton.pack()
